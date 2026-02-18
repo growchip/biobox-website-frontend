@@ -18,7 +18,7 @@ export default function Blogs() {
 
   const handleReadBlog = (slug: any) => {
     fetchSingleBlog(slug);
-    router.push(`/blogs/${slug}`);
+    router.push(`${slug}`);
   };
 
   const handlePageChange = async (page: number): Promise<void> => {
