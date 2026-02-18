@@ -5,6 +5,7 @@ import './globals.css';
 import localFont from 'next/font/local';
 import { Providers } from '@/context/Provider';
 import Header from '@/components/Header';
+import FloatingCTA from '@/components/FloatingCTA';
 
 const sora = localFont({
 	src: '../public/fonts/Sora-Regular.ttf',
@@ -94,7 +95,10 @@ export default function RootLayout({
 			<body
 				className={`${sora.variable} ${marope.variable} ${redHatDisplay.variable} ${sanchez.variable} ${poppins.variable} antialiased `}
 			>
-				<Providers>{children}</Providers>
+				<Providers>
+					{children}
+					<FloatingCTA />
+				</Providers>
 			</body>
 		</html>
 	);
