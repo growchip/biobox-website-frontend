@@ -58,7 +58,7 @@ const marope = localFont({
 });
 
 export const metadata: Metadata = {
-	title: 'bioBox Pharma',
+	title: 'BioBox Pharma',
 	description:
 		'BioBox Pharma is a leading pharmaceutical manufacturing company dedicated to quality, innovation, and compliance',
 	icons: {

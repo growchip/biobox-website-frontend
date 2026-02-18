@@ -152,7 +152,7 @@ export default function Footer() {
               </div>
 
               <div className="text-center text-sm mt-10 border-t border-white/20 pt-10 marope font-light text-base">
-                ©{new Date().getFullYear()} {copyright} | 
+                ©{new Date().getFullYear()} {copyright} | &nbsp; 
                   <a
                   href="https://www.growchip.in"
                   target="_blank"
