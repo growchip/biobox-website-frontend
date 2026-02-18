@@ -41,7 +41,7 @@ export default function BlogDescription({ slug }: any) {
 	const { blogDetail, blogDetailLoading } = useBlogsContext();
 	const { data }: any = blogDetail;
 	const { fetchSingleBlog } = useBlogsContext();
-	const htmlContent = parseBlogContent(data?.content);
+	const htmlContent = data?.content;
 
 	useEffect(() => {
 		fetchSingleBlog(slug);
