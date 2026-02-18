@@ -152,7 +152,15 @@ export default function Footer() {
               </div>
 
               <div className="text-center text-sm mt-10 border-t border-white/20 pt-10 marope font-light text-base">
-                ©{new Date().getFullYear()} {copyright}
+                ©{new Date().getFullYear()} {copyright} | 
+                  <a
+                  href="https://www.growchip.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-gray-300 transition-colors"
+                  >
+                    Website Developed By Growchip
+                  </a>
               </div>
             </div>
             <div className="w-full rounded-lg overflow-hidden flex  md:items-center ">
