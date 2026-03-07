@@ -78,9 +78,29 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+
+	const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "BioBox Pharma",
+    url: "https://bioboxpharma.com/",
+    logo: "https://bioboxpharma.com/public/images/bioLogo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9988195950",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"]
+    },
+    sameAs: [
+      "https://www.facebook.com/p/BioBox-Pharma-61577664395670/",
+      "https://www.instagram.com/bioboxpharma/"
+    ]
+  }
 	return (
 		<html lang='en'>
 			<head>
+				 <meta name="google-site-verification" content="ctZ9WxAjBF5WztUtYLZgas9cSDug5Jd3dgVlkIbdIaU" />
 				<script
 					async
 					src='https://www.googletagmanager.com/gtag/js?id=G-TTTFXCJ5RR'

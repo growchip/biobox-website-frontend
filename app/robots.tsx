@@ -11,6 +11,6 @@ export default function robots(): MetadataRoute.Robots {
 				disallow: ['/cgi-bin/'],
 			},
 		],
-		sitemap: 'https://bioboxpharma.com/',
+		sitemap: 'https://bioboxpharma.com/sitemap.xml',
 	};
 }
