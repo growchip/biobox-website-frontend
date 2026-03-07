@@ -6,6 +6,7 @@ import localFont from 'next/font/local';
 import { Providers } from '@/context/Provider';
 import Header from '@/components/Header';
 import FloatingCTA from '@/components/FloatingCTA';
+import Script from "next/script";
 
 const sora = localFont({
 	src: '../public/fonts/Sora-Regular.ttf',
@@ -75,45 +76,63 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
-}: Readonly<{
+}: {
 	children: React.ReactNode;
-}>) {
+}) {
 
 	const schema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "BioBox Pharma",
-    url: "https://bioboxpharma.com/",
-    logo: "https://bioboxpharma.com/public/images/bioLogo.png",
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9988195950",
-      contactType: "customer service",
-      areaServed: "IN",
-      availableLanguage: ["English", "Hindi"]
-    },
-    sameAs: [
-      "https://www.facebook.com/p/BioBox-Pharma-61577664395670/",
-      "https://www.instagram.com/bioboxpharma/"
-    ]
-  }
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		name: "BioBox Pharma",
+		url: "https://bioboxpharma.com/",
+		logo: "https://bioboxpharma.com/images/bioLogo.png",
+		contactPoint: {
+			"@type": "ContactPoint",
+			telephone: "+91-9988195950",
+			contactType: "customer service",
+			areaServed: "IN",
+			availableLanguage: ["English", "Hindi"]
+		},
+		sameAs: [
+			"https://www.facebook.com/p/BioBox-Pharma-61577664395670/",
+			"https://www.instagram.com/bioboxpharma/"
+		]
+	};
+
 	return (
-		<html lang='en'>
+		<html lang="en">
 			<head>
-				 <meta name="google-site-verification" content="ctZ9WxAjBF5WztUtYLZgas9cSDug5Jd3dgVlkIbdIaU" />
+				<meta
+					name="google-site-verification"
+					content="ctZ9WxAjBF5WztUtYLZgas9cSDug5Jd3dgVlkIbdIaU"
+				/>
+
+				{/* Google Analytics */}
+				<Script
+					src="https://www.googletagmanager.com/gtag/js?id=G-TTTFXCJ5RR"
+					strategy="afterInteractive"
+				/>
+
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`
+					  window.dataLayer = window.dataLayer || [];
+					  function gtag(){dataLayer.push(arguments);}
+					  gtag('js', new Date());
+					  gtag('config', 'G-TTTFXCJ5RR');
+					`}
+				</Script>
+
+				{/* Organization Schema */}
 				<script
-					async
-					src='https://www.googletagmanager.com/gtag/js?id=G-TTTFXCJ5RR'
-				></script>
-				<script>
-					{`window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-TTTFXCJ5RR');`}
-				</script>
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(schema),
+					}}
+				/>
 			</head>
+
 			<body
-				className={`${sora.variable} ${marope.variable} ${redHatDisplay.variable} ${sanchez.variable} ${poppins.variable} antialiased `}
+				className={`${sora.variable} ${marope.variable} ${redHatDisplay.variable} ${sanchez.variable} ${poppins.variable} antialiased`}
 			>
 				<Providers>
 					{children}
