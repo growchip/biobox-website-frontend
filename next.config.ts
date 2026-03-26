@@ -15,6 +15,21 @@ const nextConfig = {
     NEXT_PUBLIC_IMAGE_URL: process.env.NEXT_PUBLIC_IMAGE_URL,
     NEXT_PUBLIC_IMAGE_PATH: process.env.NEXT_PUBLIC_IMAGE_PATH,
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'bioboxpharma.com',
+          },
+        ],
+        destination: 'https://www.bioboxpharma.com/:path*',
+        permanent: true, // This triggers the 301 status code
+      },
+    ]
+  },
 };
 
 module.exports = nextConfig;
