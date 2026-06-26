@@ -247,16 +247,23 @@ export default function ContactUsForm() {
 		return Object.keys(newErrors).length === 0;
 	};
 
-	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+	const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 
 		if (!validate()) return;
 
-		getServicesEnquiry(formData);
+		try {
+			const response = await getServicesEnquiry(formData);
 
-		setFormSubmitMessage('Your message has been sent successfully!');
-		setSubmitted(true);
-		setShowPopup(true);
+			if (response?.success || response?.status === "success") {
+				setFormSubmitMessage("Your message has been sent successfully!");
+				setShowPopup(true);
+			}
+			} catch (error) {
+			setFormSubmitMessage("Failed to send enquiry.");
+			setShowPopup(true);
+			console.error(error);
+			}
 
 		setFormData({
 			name: '',
