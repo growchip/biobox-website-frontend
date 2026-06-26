@@ -12,7 +12,7 @@ export default function FloatingCTA() {
         {/* WhatsApp CTA */}
         <div className="relative w-12 h-12">
           <a
-            href="https://wa.me/919216599595"
+            href="https://wa.me/919041018491"
             target="_blank"
             className="group absolute right-0 top-0 w-12 h-12"
           >
@@ -30,7 +30,7 @@ export default function FloatingCTA() {
         {/* Call CTA */}
         <div className="relative w-12 h-12">
           <a
-            href="tel:+919216599595"
+            href="tel:+919041018491"
             className="group absolute right-0 top-0 w-12 h-12"
           >
             <span className="absolute h-12 right-12 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition px-3 py-2 bg-[#6b0f12] text-white rounded-l-full text-sm font-semibold whitespace-nowrap">
@@ -49,7 +49,7 @@ export default function FloatingCTA() {
         <div className="flex justify-around items-center py-3">
 
           <a
-            href="https://wa.me/919216599595"
+            href="https://wa.me/919041018491"
             className="flex flex-col items-center text-green-500 text-xs font-semibold"
           >
             <SiWhatsapp size={26} />
@@ -57,7 +57,7 @@ export default function FloatingCTA() {
           </a>
 
           <a
-            href="tel:+919216599595"
+            href="tel:+919041018491"
             className="flex flex-col items-center text-[#6b0f12] text-xs font-semibold"
           >
             <Phone size={24} />
